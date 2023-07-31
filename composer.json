@@ -1,0 +1,17 @@
+{
+    "name": "liceo/bootcamp",
+    "description": "Js and PHP examples",
+    "autoload": {
+        "psr-4": {
+            "Liceo\\Bootcamp\\": "src/",
+            "Liceo\\Config\\": "config/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ignacio",
+            "email": "ignacio.garcia@dracoder.com"
+        }
+    ],
+    "require": {}
+}
