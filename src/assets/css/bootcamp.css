@@ -1,0 +1,114 @@
+/* En este caso estamos importando la fuente Quicksand de Google Fonts. Esto nos permite utilizar la fuente en nuestra página sin necesidad de tener que descargar los archivos e introducirlos en nuetro proyecto. */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* :root (https://developer.mozilla.org/es/docs/Web/CSS/:root) hace referencia al componente <html> es como si pusiésemos html, con una diferencia, que :root tiene mayor especificidad (https://developer.mozilla.org/es/docs/Web/CSS/Specificity) */
+:root {
+    --primary-background: #01a29b;
+    --primary-color-btn: #ffffff; 
+    --primary-color-text: #666666;
+    --primary-modal-background: #ffffff;
+    --secondary-background: #666666;
+    --secondary-color-btn: #ffffff; 
+    --secondary-background-button: #f1f1f1;
+    --secondary-color-text: #4b4b4b;
+    --third-background: #d1fffd;
+}
+
+body {
+    margin: 0 !important;
+    font-family: 'Quicksand', sans-serif;
+    background: #ffffff;
+    color: var(--primary-color-text);
+}
+
+
+button {
+    border-radius: 2rem;
+    text-align: center;
+    height: 2.5rem;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    border: none;
+}
+
+.button--primary {
+    background-color: var(--primary-background);
+    color: var(--primary-color-btn);
+    border:1px solid var(--primary-background);
+}
+
+.button--primary:hover {
+    color: var(--primary-background);
+    background: var(--primary-color-btn);
+}
+
+.button--secondary {
+    background-color: var(--secondary-background);
+    border:1px solid var(--secondary-background);
+}
+
+.button--secondary:hover {
+    background-color: var(--primaryy-background);
+}
+
+.button--icon {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+}
+
+
+.button--icon:hover .show-icon {
+    content: url('../icons/eye-grey.svg');
+}
+
+.bootcamp-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: .375rem;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: .75rem;
+    max-width: 60rem;
+    flex-grow: 1;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0 5px 0 #bebebe;
+}
+
+.component {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.component__buttons {
+    display: flex;
+    justify-content: center;
+    gap: .3rem;
+    align-items: center;
+}
+
+.component button {
+    align-self: center;
+}
+
+.show-icon {
+    content: url("../icons/eye.svg");
+}
+
+/* Las media queries  */
+@media screen and (min-width: 30rem) {
+    .bootcamp-container {
+    
+    }
+}
+

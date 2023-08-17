@@ -5,8 +5,8 @@ namespace Liceo\Bootcamp\Controller;
 use Liceo\Bootcamp\Classes\AbstractController;
 use Liceo\Bootcamp\Interfaces\Controller;
 
-class DefaultController extends AbstractController implements Controller {
+class FlexController extends AbstractController implements Controller {
     public function display() {
-        $this->loadTemplate('home.php', ['saludos' => 'Hola mundo']);
+        $this->loadTemplate('components/flex.php', [], [], ['src/assets/css/flex.css']);
     }
 }

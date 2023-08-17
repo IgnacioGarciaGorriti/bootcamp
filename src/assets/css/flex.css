@@ -1,0 +1,30 @@
+.flex-parent {
+    display: flex;
+    background-color: rgb(254, 229, 229);
+    flex-wrap: wrap;
+    gap: 10rem;
+}
+
+.primer-hijo, .segundo-hijo, .tercer-hijo, .cuarto-hijo {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    height: 60px;
+    min-width: 10rem;
+}
+
+.primer-hijo {
+    display: flex;
+    flex-grow: 1;
+    background-color: blue;
+}
+
+.tercer-hijo {
+    flex-grow: 3;
+    background-color: green;
+}
+
+.segundo-hijo {
+    display: flex;
+    flex-grow: 2;
+    background-color: pink;
+}
