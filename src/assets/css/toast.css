@@ -1,0 +1,56 @@
+.toast {
+    display: grid;
+    grid-template-columns: min-content 20rem min-content;
+    grid-template-rows: min-content min-content;
+    gap: .375rem;
+    position: fixed;
+    padding: .75rem;
+    border-radius: 1rem;
+    z-index: 3;
+}
+
+.toast--success { 
+    background-color: #F0F7F3;
+    border: 1px solid #50DB6C;
+}
+
+.toast__title {
+    grid-column: 2;
+    grid-row: 1;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.toast__message {
+    grid-column: 2;
+    grid-row: 2;
+    color: #4b4b4b;
+    font-size: small;
+}
+
+.toast__position, .toast__position--top {
+    top: 1rem;
+}
+
+.toast__position--bottom {
+    top: unset;
+    bottom: 1rem;
+}
+
+.toast__alignment, .toast__alignment--right {
+    right: 1rem;
+}
+
+.toast-close {
+    content: url('../icons/close-outline.svg');
+    grid-column: 3;
+    grid-row: 1 / 3;
+    justify-items: center;
+    padding: .375rem;
+    border-radius: .375rem;
+    cursor: pointer;
+}
+
+.toast-close:hover {
+    background-color: white;
+}
