@@ -17,15 +17,16 @@ export class Toast {
 
     display(params) {
         this.#setParams(params);
+        const toast_container = this.#setContainer();
         const toast = document.createElement('div');
-        if(this.icon && (this.icon instanceof HTMLElement || typeof this.icon === 'string')) {
+        if(this.icon) {
             if(typeof this.icon === 'string') {
                 const img = document.createElement('img');
                 img.src = this.icon;
                 img.alt = 'icon';
                 img.classList.add('toast__icon');
                 toast.appendChild(img);
-            } else {
+            } else if (this.icon instanceof HTMLElement) {
                 toast.appendChild(this.icon);
             }
         }
@@ -54,25 +55,44 @@ export class Toast {
             toast_close.classList.add('toast-close');
             toast_close.addEventListener('click', () => {
                 toast.remove();
+                this.removeEmptyContainer(toast_container);
             });
             toast.appendChild(toast_close);
         }
         if(typeof this.duration === 'number') {
             setTimeout(() => {
                 toast.remove();
+                this.removeEmptyContainer(toast_container);
             }, this.duration);
         }
-        toast.classList.add('toast__alignment');
+        toast_container.classList.add('toast__alignment');
         if(this.alignment === 'center' || this.alignment === 'right' || this.alignment === 'left') {
-            toast.classList.add('toast__alignment--' + this.alignment);
+            toast_container.classList.add('toast__alignment--' + this.alignment);
         }
-        toast.classList.add('toast__position');
+        toast_container.classList.add('toast__position');
         if(this.position === 'top' || this.position === 'bottom' ) {
-            toast.classList.add('toast__position--' + this.position);
+            toast_container.classList.add('toast__position--' + this.position);
         }
         toast.classList.add('toast', 'toast--' + this.type, ...this.classes);
 
-        document.body.appendChild(toast);
+        toast_container.appendChild(toast);
+        document.body.appendChild(toast_container);
     }
 
+    #setContainer() {
+        let toast_container = document.getElementById('toast_container');
+        if(!toast_container) {
+            toast_container = document.createElement('div');
+        }
+        toast_container.id = 'toast_container';
+        toast_container.classList.add('toast-container');
+        document.body.appendChild(toast_container);
+        return toast_container;
+    }
+
+    removeEmptyContainer(toast_container) {
+        if(toast_container.children.length === 0) {
+            toast_container.remove();
+        }
+    }
 }
