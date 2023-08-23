@@ -21,4 +21,8 @@ class ComponentsController extends AbstractController implements Controller {
     public function toast() {
         $this->loadTemplate('components/toast.php', [], [['type' => 'module', 'path' => '../src/assets/js/components/toast.js']],['../src/assets/css/toast.css']);
     }
+
+    public function loader() {
+        $this->loadTemplate('components/loader.php', [], [['type' => 'module', 'path' => '../src/assets/js/components/loader.js']],['../src/assets/css/loader.css']);
+    }
 }
